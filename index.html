@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Experience</title>
+    <title>Improved AR Experience</title>
     
     <!-- Include A-Frame and MindAR libraries -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     
-    <!-- Add styles for full-screen rendering -->
+    <!-- Full-Screen Styling -->
     <style>
         body, html {
             margin: 0;
@@ -29,26 +29,25 @@
     </style>
 </head>
 <body>
-    <!-- Full-screen AR.js scene -->
-    <a-scene 
-        mindar-image="imageTargetSrc: ./mind/targets.mind; autoStart: true; maxTrack: 1; debugUIEnabled: false;"
+    <a-scene
+        mindar-image="imageTargetSrc: ./mind/targets.mind; autoStart: true; maxTrack: 1; filterMinCF: 0.001; filterBeta: 0.2;"
         embedded
         color-space="sRGB"
         vr-mode-ui="enabled: false;"
         device-orientation-permission-ui="enabled: true;"
         style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;">
 
-        <!-- Add your 3D Model -->
+        <!-- 3D Model -->
         <a-gltf-model 
             src="./assets/Chiari_Frames_export.glb" 
             position="0 0 0"  <!-- Adjust to center the model -->
-            scale="0.5 0.5 0.5" <!-- Adjust scale as needed -->
-            rotation="180 0 0" <!-- Correct misalignments -->
+            scale="0.3 0.3 0.3" <!-- Adjust scale for better alignment -->
+            rotation="0 180 0" <!-- Correct misalignments -->
             visible="false"
             mindar-image-target="targetIndex: 0">
         </a-gltf-model>
 
-        <!-- Add a Camera -->
+        <!-- Camera -->
         <a-camera></a-camera>
     </a-scene>
 </body>
