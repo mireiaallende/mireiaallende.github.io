@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aligned AR Experience</title>
+    <title>Stabilized AR Experience</title>
     
     <!-- Include A-Frame and MindAR libraries -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
@@ -32,7 +32,7 @@
 <body>
     <!-- AR Scene -->
     <a-scene
-        mindar-image="imageTargetSrc: ./mind/targets.mind; autoStart: true; maxTrack: 1; filterMinCF: 0.001; filterBeta: 0.2;"
+        mindar-image="imageTargetSrc: ./mind/targets.mind; autoStart: true; maxTrack: 1; filterMinCF: 0.01; filterBeta: 0.4;"
         embedded
         color-space="sRGB"
         vr-mode-ui="enabled: false;"
@@ -41,13 +41,14 @@
         
         <!-- 3D Model -->
         <a-gltf-model 
-        src="./assets/Chiari_Frames_export.glb" 
-        position="0 -2.5 0" 
-        scale="2.75 2.75 2.75" 
-        rotation="0 0 0" 
-        visible="false"
-        mindar-image-target="targetIndex: 0">
-    </a-gltf-model>
+            src="./assets/Chiari_Frames_export.glb" 
+            position="0 -2.7 0"
+            scale="1 1 1"
+            rotation="0 0 0"
+            visible="false"
+            mindar-image-target="targetIndex: 0">
+        </a-gltf-model>
+    
         
         <!-- Camera -->
         <a-camera></a-camera>
