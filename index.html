@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Experience</title>
+    <title>Aligned AR Experience</title>
     
     <!-- Include A-Frame and MindAR libraries -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
@@ -11,14 +11,13 @@
     
     <!-- Full-Screen Styling -->
     <style>
-        /* Ensure full-screen AR experience without extra text or margins */
+        /* Full-screen AR experience */
         body, html {
             margin: 0;
             padding: 0;
             overflow: hidden;
             width: 100%;
             height: 100%;
-
         }
 
         a-scene {
@@ -42,14 +41,14 @@
         
         <!-- 3D Model -->
         <a-gltf-model 
-            src="./assets/Chiari_Frames_export.glb" 
-            position="0 0 0" 
-            scale="0.3 0.3 0.3" 
-            rotation="0 180 0" 
-            visible="false"
-            mindar-image-target="targetIndex: 0">
-        </a-gltf-model>
-
+        src="./assets/Chiari_Frames_export.glb" 
+        position="0 -0.5 0" 
+        scale="1 1 1" 
+        rotation="0 0 0" 
+        visible="false"
+        mindar-image-target="targetIndex: 0">
+    </a-gltf-model>
+        
         <!-- Camera -->
         <a-camera></a-camera>
     </a-scene>
